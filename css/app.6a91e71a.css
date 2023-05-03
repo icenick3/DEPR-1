@@ -23,13 +23,11 @@ body {
 .start-page__title[data-v-d52bb6d0] {
     margin: 0 0 40px;
     padding: 0;
-    font-style: italic;
     font-weight: 700;
-    font-size: 40px;
-    line-height: 49px;
-    text-shadow: 1px 1px #6df1ef, 2px 3px #ea375c;
+    font-size: 42px;
+    line-height: 45px;
     text-transform: capitalize;
-    text-align: start
+    text-align: left
 }
 
 @media (max-width: 350px) {
@@ -45,7 +43,7 @@ body {
     font-style: normal;
     font-weight: 500;
     border-radius: 0 15px 15px 15px;
-    background: linear-gradient(90deg, #7e80b6, #c53d69 0, #60c2ca)
+    background: linear-gradient(to right, rgb(139,0,0), rgb(178,34,34));
 }
 
 @media (max-width: 350px) {
@@ -60,7 +58,8 @@ body {
     margin-bottom: 30px;
     font-weight: 500;
     font-size: 12px;
-    line-height: 15px
+    line-height: 15px;
+    display: none;
 }
 
 @media (max-width: 350px) {
@@ -91,15 +90,14 @@ body {
 
 .start-page__button[data-v-d52bb6d0] {
     margin-top: auto;
-    margin-bottom: 48px;
+    margin-bottom: 148px;
     padding: 16px 8px;
     font-weight: 500;
     font-size: 30px;
     line-height: 37px;
-    color: #000;
     border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 8px 0 #ea375c, 12px 5px 17px 1px rgba(195, 63, 107, .61), -8px 0 #6df1ef, -9px -2px 13px 1px rgba(115, 229, 230, .61);
+    color: white;
+    background: linear-gradient(to right, rgb(139,0,0), rgb(178,34,34));
     animation: scale-btn 1s infinite alternate
 }
 
@@ -1069,7 +1067,7 @@ body:before {
 .b {
     color: #222222;
     background: #FFFFFF;
-    font-family: 'Inter';
+    font-family: Inter, Arial, sans-serif;
     font-style: normal;
     font-weight: 800;
     font-size: 30px;

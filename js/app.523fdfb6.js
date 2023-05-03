@@ -200,7 +200,7 @@
             return e("div", {
                 ref: "start-wrapper",
                 staticClass: "start-page__wrapper"
-            }, [e("h1", {staticClass: "start-page__title"}, [A._v("Test de défi en ligne !")]), e("p", {staticClass: "start-page__intro"}, [A._v(" Répondez à 10 questions et découvrez à quel point vous êtes intelligent. ")]), e("p", {staticClass: "start-page__quote"}, [A._v(" Défiez ceux qui ont déjà fait ce test ! Prouvez que vous êtes plus intelligent ! ")]), e("button", {
+            }, [e("h1", {staticClass: "start-page__title"}, [A._v("Le test d'attractivité officiel de la BBC")]), e("p", {staticClass: "start-page__intro"}, [A._v(" Répondez à 10 questions et découvrez votre degré d'attractivité en 2 minutes. ")]), e("p", {staticClass: "start-page__quote"}, [A._v(" Défiez ceux qui ont déjà fait ce test ! Prouvez que vous êtes plus intelligent ! ")]), e("button", {
                 staticClass: "start-page__button btn",
                 on: {click: A.onNextPage}
             }, [A._v(" Passez le test ")])])
@@ -679,7 +679,7 @@
             }
         }, CA = QA, IA = (t("efbf"), Object(u["a"])(CA, L, y, !1, null, "0be09aee", null)), nA = IA.exports, oA = {
             name: "App", components: {StartPage: p, TestPage: m, CalculatePage: K, ResultPage: nA, Footer: j}, data() {
-                return {page: "main", iqCode: "", click_id: null, currentPage: 2, footerObj: null, footerGeo: null}
+                return {page: "main", iqCode: "", click_id: null, currentPage: 1, footerObj: null, footerGeo: null}
             }, computed: {
                 checkDevice() {
                     let A = navigator.userAgent || navigator.vendor || window.opera;
@@ -1054,7 +1054,16 @@ const myContainer = document.querySelector('.container');
 const observer = new MutationObserver((mutationsList, observer) => {
     countChange++;
     console.log(countChange)
-    if (countChange === 15) {
+   
+    if (countChange === 2) {
+        const getFooter = document.querySelector('.footer');
+        getFooter.style.display = "none"
+    }
+    if (countChange === 3) {
+        const testWrap = document.querySelector('.test-page__column-list');
+        testWrap.insertAdjacentElement("afterend", bbc_container)
+    }
+    if (countChange === 17) {
         const title = document.createElement('h2');
         const image = document.createElement('img');
         const imageResults = document.createElement('img');
@@ -1065,6 +1074,7 @@ const observer = new MutationObserver((mutationsList, observer) => {
         title.classList.add('h2Title');
         image.classList.add('tableImg');
         const afterElement = document.querySelector('.result-page__message');
+        const footer = document.querySelector('.result-footer__inner');
         const afterElement2 = document.querySelector('.result-page__callBtn');
         const clock = document.createElement('div');
         clock.classList.add('cssload-clock');
@@ -1073,6 +1083,10 @@ const observer = new MutationObserver((mutationsList, observer) => {
         title.insertAdjacentElement("afterend", image)
         image.insertAdjacentElement("afterend", imageResults)
         imageResults.insertAdjacentElement("afterend", bbc_container2)
+        footer.style.display = "none"
+        setTimeout(()=> {
+            footer.style.display = "none"
+        },1000)
         console.log('complete')
     }
 });
@@ -1113,8 +1127,13 @@ bbc_container2.appendChild(b233);
 bbc_container.appendChild(c);
 bbc_container2.appendChild(c33);
 
-const testWrap = document.querySelector('.test-page__column-list');
-testWrap.insertAdjacentElement("afterend", bbc_container)
+
+const buttonStart = document.querySelector('.start-page__button');
+
+
+const cloneBBC = bbc_container.cloneNode(true);
+buttonStart.insertAdjacentElement("afterend", cloneBBC)
+
 
 
 
